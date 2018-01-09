@@ -83,9 +83,9 @@ Each sensor node will have either a single audio sensor or small set of sensors 
 
 Initially each audio sensor node will be accurately geolocated with a GPS system. We will test the built-in geolocation capabilities offered by the LoRa technology itself against the GPS system. Four-plus gateways will be used to demonstrate the complete system over a range that will cover 10 square kilometers of effective "listening." The sensor nodes will transmit sufficient audio (conserving power and processing where possible) to geolocate gunshots within the detection area.
 
-The audio waveforms will be transmitted to gateways connected via WiFi or ethernet to a network server which in-turn forward the waveforms to a cloud-based system for analysis. We propose to build two graphical user interfaces (GUIs) (end-user and engineering), which will support the testing of our own system as well as third-party acoustic processing systems, if and when any firms use the webhook interface. The end-user interface will be designed for a first-responder to react to a gunshot in the field.That is, it will simplify the data to just the most important feature: where is the event, what is the geographic circular error probability of the event, and how likely was it a gunshot?
+The audio waveforms will be transmitted to gateways connected via WiFi or ethernet to a network server which in-turn forward the waveforms to a cloud-based system for analysis. We propose to build two user interfaces (end-user and engineering), which will support the testing of our own system as well as third-party acoustic processing systems, if and when any firms use the webhook interface. The end-user interface will be designed for a first-responder to react to a gunshot in the field.That is, it will simplify the data to just the most important feature: where is the event, what is the geographic circular error probability of the event, and how likely was it a gunshot?
 
-The engineering interface, on the other hand, will provide a much richer interface, exposing the signal received by each node, and details of the acoustic event. This GUI will be use by ourselves and other skilled researchers to test the system. The GUIs will use standard API-based architectural separation, which will enable a third-party to build an extended analysis system.
+The engineering interface, on the other hand, will provide a much richer interface, exposing the signal received by each node, and details of the acoustic event. This user interface will be used by ourselves and other skilled researchers to test the system. The user interfaces will use standard API-based architectural separation, which will enable a third-party to build an extended analysis system.
 
 Our primary emphasis is on the concept of dense, low cost sensor networks based on LPWAN technology. We intend to keep a clear separation between the software to analyze the audio streams for the purpose of geolocation and the rest of the transmission system. This will allow DARPA or other organizations to construct or use competitive or pre-existing gunshot analysis systems based on our LPWAN hardware. We will provide sufficient audio geolocation to effectively test the system; we suspect that other firms or subsequent-grant development will provide more gunshot analysis cloud-based software.
 
@@ -102,6 +102,8 @@ The cloud services will utilize web APIs, providing a common interface for acces
 
 Project APIs will allow for system-to-system integration and aggregation, as well as the development of web, mobile, and other device applications that augment the functionality of the project. This will open up the system to researchers and other agencies for analysis and testing in different applications and contexts and with different analysis technology.
 
+![Dense Sense infographic.](dense-sense-infographic.png)
+
 ### 3.4 Expected challenges
 
 We believe the use of the relatively new LoRa LPWAN for this application is unexplored. As such, there will be challenges related to the successful transmission of audio data answering the following questions:
@@ -113,7 +115,7 @@ We believe the use of the relatively new LoRa LPWAN for this application is unex
 * Do the radio systems' proffered geolocation capabilities work well in an urban landscape?
 * Does the LoRa radio system in practice support sufficient data transmission bandwidth for gunshot geolocation or noise identification?
 
-A challenge for the GUI is to provide sufficient insight to the audio streams to allow investigators to fully understand the performance and limitations of the system. The end-user GUI must be good enough for an unskilled user to understand the geolocation of gunshots.
+A challenge for the user interface is to provide sufficient insight to the audio streams to allow investigators to fully understand the performance and limitations of the system. The user interface must be good enough for an unskilled user to understand the geolocation of gunshots.
 
 ### 3.5 Successful impact
 
@@ -133,6 +135,8 @@ The completed sensor network will encompass a circular area of approximately 10 
 
 ### 3.7 Work activities
 
+![Graphic showing three phases of development.](development-stages.png)
+
 As this project will be challenging, we plan to develop this functionality in stages, each of which will demonstrate increasing capabilities. The hardware systems used in the sensor node in each of these Stages are depicted above.
 
 **Stage #1:** Simulate the audio subsystem, but test the radio capabilities. We will place 10 "listening stations" programmed to send simulated audio signals. These will be manually geolocated with a handheld GPS system. By using 4+ base stations, we will be able to test the non-GPS based "time of arrival" geolocation functionality of LoRa and compare it to the GPS geolocation. The MCUs of the listening station will be programmed to report a "bang" every 5 seconds. This will allow us to test the system end-to-end:
@@ -140,7 +144,7 @@ As this project will be challenging, we plan to develop this functionality in st
 * Sensor to base station
 * Base station to cloud
 * Cloud to cloud-based API (webhook)
-* Cloud to end-user GUI for rapid response and testing
+* Cloud to user interface for rapid response and testing
 
 A likely hardware embodiment of this stage is the [ST Nucleo-LRWAN1](http://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/stm32-nucleo-expansion-boards/p-nucleo-lrwan1.html) or the Adafruit Arduino Zero-powered [Feather](https://learn.adafruit.com/adafruit-feather-m0-radio-with-lora-radio-module/pinouts?view=all).
 
@@ -148,7 +152,7 @@ A likely hardware embodiment of this stage is the [ST Nucleo-LRWAN1](http://www.
 
 * The ability to transmit true audio, and/or a compressed event stream signal without worrying about power consumption
 * To test simple gunshot geolocation based on relatively simple least squares modeling
-* To test our end-to-end software GUIs
+* To test our end-to-end software user interfaces
 * The ability to test a full-powered computer processing system to compute audio stream events to reduce power
 * Measure the power consumed by the radio sending a packet stream
 
@@ -218,4 +222,4 @@ It is expected that we will use commercial-off-the-shelf (COTS) hardware for the
 
 [TI MSP430F5529 Ultra low-power MCU](http://www.ti.com/product/MSP430F5529/description?keyMatch=msp430f5529&tisearch=Search-EN-Everything)
 
-[Mutlitech Long Range RF Modules (MTDOT Series)] (https://www.multitech.com/brands/multiconnect-mdot)
+[Mutlitech Long Range RF Modules] (https://www.multitech.com/brands/multiconnect-mdot)
