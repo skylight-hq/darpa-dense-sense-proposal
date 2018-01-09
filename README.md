@@ -222,4 +222,4 @@ It is expected that we will use commercial-off-the-shelf (COTS) hardware for the
 
 [TI MSP430F5529 Ultra low-power MCU](http://www.ti.com/product/MSP430F5529/description?keyMatch=msp430f5529&tisearch=Search-EN-Everything)
 
-[Mutlitech Long Range RF Modules] (https://www.multitech.com/brands/multiconnect-mdot)
+[Mutlitech Long Range RF Modules](https://www.multitech.com/brands/multiconnect-mdot)
